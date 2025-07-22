@@ -1,6 +1,7 @@
+
+
+gastos = []
 //### ProyectoJS ###//
-
-
 let boleano = true
 while (boleano = true) {
 
@@ -8,7 +9,6 @@ while (boleano = true) {
         ===========================================
 
                     Simulador de Gasto Diario
-
         ===========================================
         Seleccione una opción:
 
@@ -42,7 +42,16 @@ while (boleano = true) {
         ==========================================
             Ingrese la información del gasto:
 
-            Ingrese una breve descripción del gasto:`);
+            Ingrese una breve descripción opcional del gasto:`);
+
+        let fecha = prompt(`
+        ==========================================
+                    Registrar Nuevo Gasto
+        ==========================================
+            Ingrese la información del gasto:
+
+            Ingrese la fecha a guardar el gasto (YYYY-MM-DD):`);
+
 
         let guardar = prompt(`
         ==========================================
@@ -57,15 +66,68 @@ while (boleano = true) {
             gastos.push({
                 "monto": montoGasto,
                 "categoria": categoria,
-                "descripcion": descripcion
+                "descripcion": descripcion,
+                "fecha": fecha
             });
             alert("Gasto guardado correctamente.");
         } else {
             alert("Gasto no guardadito.");
         }
     }
+    else if (opci == "2") {
+        if (gastos.length === 0) {
+            alert("⚠️ No hay gastos registrados.");
+        } else {
+            let subopcion = prompt(`
+    ============================================
+        ¿Cómo desea listar los gastos?
+        1. Listar todos
+        2. Listar por categoría
+        3. Listar por fecha exacta (YYYY-MM-DD)
+    ============================================`);
 
+            if (subopcion === "1") {
+                let lista = "Lista de todos los gastos:\n\n";
+                gastos.forEach((gasto, index) => {
+                    lista += `${index + 1}. $${gasto.monto} - ${gasto.categoria} (${gasto.descripcion}) - Fecha: ${gasto.fecha}\n`;
+                });
+                alert(lista);
+
+            } else if (subopcion === "2") {
+                let categoriaFiltrar = prompt("Ingrese la categoría a filtrar:");
+                let lista = `Gastos en categoría: ${categoriaFiltrar}\n\n`;
+                let encontrados = gastos.filter(g => g.categoria.toLowerCase() === categoriaFiltrar.toLowerCase());
+
+                if (encontrados.length === 0) {
+                    alert("No hay gastos en esa categoría.");
+                } else {
+                    encontrados.forEach((gasto, index) => {
+                        lista += `${index + 1}. $${gasto.monto} (${gasto.descripcion}) - Fecha: ${gasto.fecha}\n`;
+                    });
+                    alert(lista);
+                }
+
+            } else if (subopcion === "3") {
+                let fechaFiltrar = prompt("Ingrese la fecha (YYYY-MM-DD):");
+                let encontrados = gastos.filter(g => g.fecha === fechaFiltrar);
+
+                if (encontrados.length === 0) {
+                    alert("No hay gastos registrados en esa fecha.");
+                } else {
+                    let lista = `Gastos del día ${fechaFiltrar}:\n\n`;
+                    encontrados.forEach((gasto, index) => {
+                        lista += `${index + 1}. $${gasto.monto} - ${gasto.categoria} (${gasto.descripcion})\n`;
+                    });
+                    alert(lista);
+                }
+
+            } else {
+                alert("❌ Opción no válida.");
+            }
+        }
     }
 
+}
 
-// Desarrolado por Santiago Uribe Duarte //
+
+// Desarrolado por Santiago Uribe Duarte TI 1097099401 //
