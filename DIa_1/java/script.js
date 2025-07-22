@@ -96,13 +96,13 @@ while (boleano = true) {
                 alert(lista);
             }
 
-            //Funcion de categorias no implementada debido a errores//
+        
 
             else if (opcidos === "2") {
                 let categoriaFiltrar = prompt("Ingrese la categoria :");
                 let encontrados = gastos.filter(g => g.categoria === categoriaFiltrar);
 
-                if (encontrados.length === 0) {
+                if (encontrados.length == 0) {
                     alert("No hay gastos registrados en esa categoria.");
                 } else {
                     let lista = `Gastos de la categoria ${categoriaFiltrar}:\n\n`;
