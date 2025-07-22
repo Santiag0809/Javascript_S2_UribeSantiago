@@ -1,7 +1,9 @@
 
 
 gastos = []
+
 //### ProyectoJS ###//
+
 let boleano = true
 while (boleano = true) {
 
@@ -76,9 +78,9 @@ while (boleano = true) {
     }
     else if (opci == "2") {
         if (gastos.length === 0) {
-            alert("⚠️ No hay gastos registrados.");
+            alert("No hay gastos registrados.");
         } else {
-            let subopcion = prompt(`
+            let opcidos = prompt(`
     ============================================
         ¿Cómo desea listar los gastos?
         1. Listar todos
@@ -86,28 +88,33 @@ while (boleano = true) {
         3. Listar por fecha exacta (YYYY-MM-DD)
     ============================================`);
 
-            if (subopcion === "1") {
+            if (opcidos === "1") {
                 let lista = "Lista de todos los gastos:\n\n";
                 gastos.forEach((gasto, index) => {
-                    lista += `${index + 1}. $${gasto.monto} - ${gasto.categoria} (${gasto.descripcion}) - Fecha: ${gasto.fecha}\n`;
+                    lista += `${index + 1}. $${gasto.monto} - ${gasto.categoria} (${gasto.descripcion}) - fecha: ${gasto.fecha}\n`;
                 });
                 alert(lista);
+            }
 
-            } else if (subopcion === "2") {
-                let categoriaFiltrar = prompt("Ingrese la categoría a filtrar:");
-                let lista = `Gastos en categoría: ${categoriaFiltrar}\n\n`;
-                let encontrados = gastos.filter(g => g.categoria.toLowerCase() === categoriaFiltrar.toLowerCase());
+            //Funcion de categorias no implementada debido a errores//
+
+            else if (opcidos === "2") {
+                let categoriaFiltrar = prompt("Ingrese la categoria :");
+                let encontrados = gastos.filter(g => g.categoria === categoriaFiltrar);
 
                 if (encontrados.length === 0) {
-                    alert("No hay gastos en esa categoría.");
+                    alert("No hay gastos registrados en esa categoria.");
                 } else {
+                    let lista = `Gastos de la categoria ${categoriaFiltrar}:\n\n`;
                     encontrados.forEach((gasto, index) => {
-                        lista += `${index + 1}. $${gasto.monto} (${gasto.descripcion}) - Fecha: ${gasto.fecha}\n`;
+                        lista += `${index + 1}. $${gasto.monto} - ${gasto.categoria} (${gasto.descripcion}) - fecha: ${gasto.fecha}\n`;
                     });
                     alert(lista);
                 }
 
-            } else if (subopcion === "3") {
+            }
+
+            else if (opcidos === "3") {
                 let fechaFiltrar = prompt("Ingrese la fecha (YYYY-MM-DD):");
                 let encontrados = gastos.filter(g => g.fecha === fechaFiltrar);
 
@@ -116,13 +123,15 @@ while (boleano = true) {
                 } else {
                     let lista = `Gastos del día ${fechaFiltrar}:\n\n`;
                     encontrados.forEach((gasto, index) => {
-                        lista += `${index + 1}. $${gasto.monto} - ${gasto.categoria} (${gasto.descripcion})\n`;
+                        lista += `${index + 1}. $${gasto.monto} - ${gasto.categoria} (${gasto.descripcion}) - fecha: ${gasto.fecha}\n`;
                     });
                     alert(lista);
                 }
 
-            } else {
-                alert("❌ Opción no válida.");
+            }
+
+            else {
+                alert("Opción no válida.");
             }
         }
     }
