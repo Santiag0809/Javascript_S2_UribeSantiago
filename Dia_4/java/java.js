@@ -1,7 +1,25 @@
-ingredientes = []
-burguer = []
-category = []
-chef = []
+ingredientes = [{
+    "Nombre": "Queso cheddar",
+    "Descripcion": "Queso cheddar derretido",
+    "Precio": 1.5,
+    "Stock": 200
+}]
+burguer = [{
+    "NombreBurguer": "Doble Carne",
+    "CategoriaBurguer": "Gourmet",
+    "IngredienteBurguer": ["Pan de sésamo", "Doble carne de res", "Queso cheddar", "Bacon", "Lechuga", "Cebolla caramelizada", "Salsa BBQ"],
+    "PrecioBurguer": 12,
+    "ChefBurguer": "ChefC"
+}]
+category = [ {
+    "NombreCategoria": "Gourmet",
+    "DescripcionCategoria": "Hamburguesas gourmet con ingredientes premium"
+}]
+chef = [{
+    "NombreChef": "ChefC",
+    "Especialidad": "Gourmet"
+}]
+
 // CAFETERIA CAMPUS //
 
 let boleano = true
