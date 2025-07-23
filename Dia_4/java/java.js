@@ -253,7 +253,10 @@ while (boleano = true) {
         alert(lista);
     }
     }
-    
+    else if (opci == 5) {
+        alert("ADIOOOOOOOOOOOOOOOOOOOS")
+        break
+    }
 }
 
 
