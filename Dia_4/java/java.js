@@ -1,4 +1,5 @@
 ingredientes = []
+burguer = []
 // CAFETERIA CAMPUS //
 
 let boleano = true
@@ -75,7 +76,58 @@ while (boleano = true) {
                 alert("Ingrediente no guardadito.");
             }
         }
+
+
+        else if (opciones == 2) {
+            let nombreB = prompt(`
+            ===========================================
+                    Registrar nombre burguer
+            ===========================================`);
+
+            let categoriaB = prompt(`
+            ===========================================
+                    Registrar descripcion ingrediente
+            ===========================================`);
+
+            let ingredienteb = prompt(`
+            ===========================================
+                    Registrar ingrediente
+            ===========================================`);
+
+            let precioB = parseInt(prompt(`
+            ===========================================
+                    Registrar stock ingrediente
+            ===========================================`));
+
+            let chef = prompt(`
+            ===========================================
+                    Registrar chef
+            ===========================================`);
+
+            let guardar = prompt(`
+            ==========================================
+                    Registrar nuevo ingrediente
+            ==========================================
+
+                ¿Desea guardar la nueva burguer?
+                1. Sí
+                2. No`);
+
+            if (guardar === "1") {
+                burguer.push({
+                    "Nombre": nombreB,
+                    "Categoria": categoriaB,
+                    "Ingrediente": ingredienteb,
+                    "Precio": precioB,
+                    "Chef" : chef
+                });
+                alert("Burguer guardada correctamente.");
+            } else {
+                alert("Burguer no guardadita.");
+            }
+        }
     }
+    
 }
 
 
