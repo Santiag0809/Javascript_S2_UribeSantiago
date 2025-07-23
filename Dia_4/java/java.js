@@ -1,6 +1,7 @@
 ingredientes = []
 burguer = []
 category = []
+chef = []
 // CAFETERIA CAMPUS //
 
 let boleano = true
@@ -102,8 +103,8 @@ while (boleano = true) {
 
             if (guardar === "1") {
                 category.push({
-                    "Nombre": categoriA,
-                    "Descripcion": descripA
+                    "NombreCategoria": categoriA,
+                    "DescripcionCategoria": descripA
                 });
                 alert("Categoria guardada correctamente.");
             } else {
@@ -148,11 +149,11 @@ while (boleano = true) {
 
             if (guardar === "1") {
                 burguer.push({
-                    "Nombre": nombreB,
-                    "Categoria": categoriaB,
-                    "Ingrediente": ingredienteb,
-                    "Precio": precioB,
-                    "Chef" : chef
+                    "NombreBurguer": nombreB,
+                    "CategoriaBurguer": categoriaB,
+                    "IngredienteBurguer": ingredienteb,
+                    "PrecioBurguer": precioB,
+                    "ChefBurguer" : chef
                 });
                 alert("Burguer guardada correctamente.");
             } else {
@@ -181,8 +182,8 @@ while (boleano = true) {
                 2. No`);
 
             if (guardar === "1") {
-                category.push({
-                    "Nombre": nombreChef,
+                chef.push({
+                    "NombreChef": nombreChef,
                     "Especialidad": especialidad
                 });
                 alert("Chef guardad@ correctamente.");
@@ -191,8 +192,52 @@ while (boleano = true) {
             }
         }
     }
+
+    else if (opci == 2) {
+    let listita = prompt(`
+    ============================================
+        ¿Cómo deseas listar?
+        1. Listar por ingrediente
+        2. Listar por hamburguesa
+        3. Listar por categoria
+        4. Listar por chef
+    ============================================`)
+
+    if (listita === "1") {
+        let lista = "Lista de todos los ingredientes:\n\n";
+        ingredientes.forEach((ing, index) => {
+            lista += `${index + 1}. ${ing.Nombre} - (${ing.Descripcion}) - precio: $${ing.Precio} (${ing.Stock}) \n`;
+        });
+        alert(lista);
+    }
+
+    else if (listita === "2") {
+        let lista = "Lista de todas las categorias:\n\n";
+        category.forEach((c, index) => {
+            lista += `${index + 1}. ${c.NombreCategoria} - (${c.DescripcionCategoria}) \n`;
+        });
+        alert(lista);
+    }
+
+    else if (listita === "3") {
+        let lista = "Lista de todas las hamburguesas:\n\n";
+        burguer.forEach((b, index) => {
+            lista += `${index + 1}. ${b.NombreBurguer} - (${b.CategoriaBurguer}) - precio: $${b.PrecioBurguer} (${b.IngredienteBurguer}) - chef: (${b.ChefBurguer}) \n`;
+        });
+        alert(lista);
+    }
+
+    else if (listita === "4") {
+        let lista = "Lista de todos los chef:\n\n";
+        chef.forEach((che, index) => {
+            lista += `${index + 1}. ${che.NombreChef} - (${che.Especialidad}) \n`;
+        });
+        alert(lista);
+    }
+    }
     
 }
+
 
 
 
