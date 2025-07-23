@@ -1,5 +1,6 @@
 ingredientes = []
 burguer = []
+category = []
 // CAFETERIA CAMPUS //
 
 let boleano = true
@@ -29,8 +30,8 @@ while (boleano = true) {
                 Ingrese la opcion que desea añadir:
     
                 1. ingrediente :
-                2. hamburguesa :
-                3. categorias :
+                2. Categorias :
+                3. hamburguesa  :
                 4. chef :
             ===========================================`));
 
@@ -79,6 +80,38 @@ while (boleano = true) {
 
 
         else if (opciones == 2) {
+            let categoriA = prompt(`
+            ===========================================
+                    Registrar nombre categoria
+            ===========================================`);
+
+            let descripA = prompt(`
+            ===========================================
+                    Registrar descripcion categoria
+            ===========================================`);
+
+
+            let guardar = prompt(`
+            ==========================================
+                    Registrar nuevo ingrediente
+            ==========================================
+
+                ¿Desea guardar la nueva burguer?
+                1. Sí
+                2. No`);
+
+            if (guardar === "1") {
+                category.push({
+                    "Nombre": categoriA,
+                    "Descripcion": descripA
+                });
+                alert("Categoria guardada correctamente.");
+            } else {
+                alert("Categoria no guardadita.");
+            }
+        }
+
+        else if (opciones == 3) {
             let nombreB = prompt(`
             ===========================================
                     Registrar nombre burguer
@@ -124,6 +157,37 @@ while (boleano = true) {
                 alert("Burguer guardada correctamente.");
             } else {
                 alert("Burguer no guardadita.");
+            }
+        }
+        else if (opciones == 4) {
+            let nombreChef = prompt(`
+            ===========================================
+                    Registrar nombre chef
+            ===========================================`);
+
+            let especialidad = prompt(`
+            ===========================================
+                    Registrar especialidad del chef
+            ===========================================`);
+
+
+            let guardar = prompt(`
+            ==========================================
+                    Registrar nuevo ingrediente
+            ==========================================
+
+                ¿Desea guardar la nueva burguer?
+                1. Sí
+                2. No`);
+
+            if (guardar === "1") {
+                category.push({
+                    "Nombre": nombreChef,
+                    "Especialidad": especialidad
+                });
+                alert("Chef guardad@ correctamente.");
+            } else {
+                alert("Chef no guardadito.");
             }
         }
     }
