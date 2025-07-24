@@ -2,6 +2,9 @@
 
 **JavaScript** es un lenguaje de programación interpretado, ligero y orientado a objetos, diseñado principalmente para crear páginas web interactivas.
 
+## Estructura del proyecto
+
+```
 JAVASCRIPT_S2_URIBESANTIAGO/
 ├── Dia_1/
 │   ├── java/
@@ -11,7 +14,7 @@ JAVASCRIPT_S2_URIBESANTIAGO/
     ├── java/
     ├── styles/
     └── index.html
-
+```
 
 ## LINK DEL PRIMER TRABAJO (PROYECTO PYTHON A JAVASCRIPT)
 https://santiag0809.github.io/Javascript_S2_UribeSantiago/Dia_1/
