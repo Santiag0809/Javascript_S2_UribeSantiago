@@ -264,7 +264,7 @@ while (boleano = true) {
         4. Chef
     ============================================`);
 
-        
+
         if (editar == "1") {
             let nombre = prompt("Ingrese el nombre del ingrediente a editar:");
             let index = ingredientes.findIndex(i => i.Nombre.toLowerCase() === nombre.toLowerCase());
@@ -283,7 +283,7 @@ while (boleano = true) {
             }
         }
 
-        
+
         else if (editar == "2") {
             let nombre = prompt("Ingrese el nombre de la categoría a editar:");
             let index = category.findIndex(c => c.NombreCategoria.toLowerCase() === nombre.toLowerCase());
@@ -300,7 +300,7 @@ while (boleano = true) {
             }
         }
 
-        
+
         else if (editar == "3") {
             let nombre = prompt("Ingrese el nombre de la hamburguesa a editar:");
             let index = burguer.findIndex(b => b.NombreBurguer.toLowerCase() === nombre.toLowerCase());
@@ -320,7 +320,7 @@ while (boleano = true) {
             }
         }
 
-        
+
         else if (editar == "4") {
             let nombre = prompt("Ingrese el nombre del chef a editar:");
             let index = chef.findIndex(c => c.NombreChef.toLowerCase() === nombre.toLowerCase());
@@ -338,8 +338,71 @@ while (boleano = true) {
         }
     }
 
+
+    else if (opci == 4) {
+        let eliminar = prompt(`
+    ============================================
+        ¿Qué deseas eliminar?
+        1. Ingrediente
+        2. Categoría
+        3. Hamburguesa
+        4. Chef
+    ============================================`);
+
+
+        if (eliminar == "1") {
+            let nombre = prompt("Ingrese el nombre del ingrediente a eliminar:");
+            let index = ingredientes.findIndex(i => i.Nombre.toLowerCase() === nombre.toLowerCase());
+
+            if (index !== -1) {
+                ingredientes.splice(index, 1);
+                alert("Ingrediente eliminado.");
+            } else {
+                alert("Ingrediente no encontrado.");
+            }
+        }
+
+
+        else if (eliminar == "2") {
+            let nombre = prompt("Ingrese el nombre de la categoría a eliminar:");
+            let index = category.findIndex(c => c.NombreCategoria.toLowerCase() === nombre.toLowerCase());
+
+            if (index !== -1) {
+                category.splice(index, 1);
+                alert("Categoría eliminada.");
+            } else {
+                alert("Categoría no encontrada.");
+            }
+        }
+
+
+        else if (eliminar == "3") {
+            let nombre = prompt("Ingrese el nombre de la hamburguesa a eliminar:");
+            let index = burguer.findIndex(b => b.NombreBurguer.toLowerCase() === nombre.toLowerCase());
+
+            if (index !== -1) {
+                burguer.splice(index, 1);
+                alert("Hamburguesa eliminada.");
+            } else {
+                alert("Hamburguesa no encontrada.");
+            }
+        }
+
+
+        else if (eliminar == "4") {
+            let nombre = prompt("Ingrese el nombre del chef a eliminar:");
+            let index = chef.findIndex(c => c.NombreChef.toLowerCase() === nombre.toLowerCase());
+
+            if (index !== -1) {
+                chef.splice(index, 1);
+                alert("Chef eliminado.");
+            } else {
+                alert("Chef no encontrado.");
+            }
+        }
+    }
     else if (opci == 5) {
-        alert("ADIOOOOOOOOOOOOOOOOOOOS")
+        alert("ADIOOOOOOOOOOOOOOOOOOOS AMIGUITO")
         break
     }
 }
