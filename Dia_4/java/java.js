@@ -11,7 +11,7 @@ burguer = [{
     "PrecioBurguer": 12,
     "ChefBurguer": "ChefC"
 }]
-category = [ {
+category = [{
     "NombreCategoria": "Gourmet",
     "DescripcionCategoria": "Hamburguesas gourmet con ingredientes premium"
 }]
@@ -89,7 +89,7 @@ while (boleano = true) {
                     "Nombre": nombreIng,
                     "Descripcion": descriIng,
                     "Precio": precioIng,
-                    "Stock" : stockIng
+                    "Stock": stockIng
                 });
                 alert("Ingrediente guardado correctamente.");
             } else {
@@ -171,7 +171,7 @@ while (boleano = true) {
                     "CategoriaBurguer": categoriaB,
                     "IngredienteBurguer": ingredienteb,
                     "PrecioBurguer": precioB,
-                    "ChefBurguer" : chef
+                    "ChefBurguer": chef
                 });
                 alert("Burguer guardada correctamente.");
             } else {
@@ -212,7 +212,7 @@ while (boleano = true) {
     }
 
     else if (opci == 2) {
-    let listita = prompt(`
+        let listita = prompt(`
     ============================================
         ¿Cómo deseas listar?
         1. Listar por ingrediente
@@ -221,38 +221,123 @@ while (boleano = true) {
         4. Listar por chef
     ============================================`)
 
-    if (listita === "1") {
-        let lista = "Lista de todos los ingredientes:\n\n";
-        ingredientes.forEach((ing, index) => {
-            lista += `${index + 1}. ${ing.Nombre} - (${ing.Descripcion}) - precio: $${ing.Precio} (${ing.Stock}) \n`;
-        });
-        alert(lista);
+        if (listita === "1") {
+            let lista = "Lista de todos los ingredientes:\n\n";
+            ingredientes.forEach((ing, index) => {
+                lista += `${index + 1}. ${ing.Nombre} - (${ing.Descripcion}) - precio: $${ing.Precio} (${ing.Stock}) \n`;
+            });
+            alert(lista);
+        }
+
+        else if (listita === "2") {
+            let lista = "Lista de todas las categorias:\n\n";
+            category.forEach((c, index) => {
+                lista += `${index + 1}. ${c.NombreCategoria} - (${c.DescripcionCategoria}) \n`;
+            });
+            alert(lista);
+        }
+
+        else if (listita === "3") {
+            let lista = "Lista de todas las hamburguesas:\n\n";
+            burguer.forEach((b, index) => {
+                lista += `${index + 1}. ${b.NombreBurguer} - (${b.CategoriaBurguer}) - precio: $${b.PrecioBurguer} (${b.IngredienteBurguer}) - chef: (${b.ChefBurguer}) \n`;
+            });
+            alert(lista);
+        }
+
+        else if (listita === "4") {
+            let lista = "Lista de todos los chef:\n\n";
+            chef.forEach((che, index) => {
+                lista += `${index + 1}. ${che.NombreChef} - (${che.Especialidad}) \n`;
+            });
+            alert(lista);
+        }
     }
 
-    else if (listita === "2") {
-        let lista = "Lista de todas las categorias:\n\n";
-        category.forEach((c, index) => {
-            lista += `${index + 1}. ${c.NombreCategoria} - (${c.DescripcionCategoria}) \n`;
-        });
-        alert(lista);
+    else if (opci == 3) {
+        let editar = prompt(`
+    ============================================
+        ¿Qué deseas editar?
+        1. Ingrediente
+        2. Categoría
+        3. Hamburguesa
+        4. Chef
+    ============================================`);
+
+        
+        if (editar == "1") {
+            let nombre = prompt("Ingrese el nombre del ingrediente a editar:");
+            let index = ingredientes.findIndex(i => i.Nombre.toLowerCase() === nombre.toLowerCase());
+
+            if (index !== -1) {
+                let nuevo = {
+                    Nombre: prompt("Nuevo nombre:", ingredientes[index].Nombre),
+                    Descripcion: prompt("Nueva descripción:", ingredientes[index].Descripcion),
+                    Precio: parseFloat(prompt("Nuevo precio:", ingredientes[index].Precio)),
+                    Stock: parseInt(prompt("Nuevo stock:", ingredientes[index].Stock))
+                };
+                ingredientes.splice(index, 1, nuevo);
+                alert("Ingrediente actualizado.");
+            } else {
+                alert("Ingrediente no encontrado.");
+            }
+        }
+
+        
+        else if (editar == "2") {
+            let nombre = prompt("Ingrese el nombre de la categoría a editar:");
+            let index = category.findIndex(c => c.NombreCategoria.toLowerCase() === nombre.toLowerCase());
+
+            if (index !== -1) {
+                let nueva = {
+                    NombreCategoria: prompt("Nuevo nombre:", category[index].NombreCategoria),
+                    DescripcionCategoria: prompt("Nueva descripción:", category[index].DescripcionCategoria)
+                };
+                category.splice(index, 1, nueva);
+                alert("Categoría actualizada.");
+            } else {
+                alert("Categoría no encontrada.");
+            }
+        }
+
+        
+        else if (editar == "3") {
+            let nombre = prompt("Ingrese el nombre de la hamburguesa a editar:");
+            let index = burguer.findIndex(b => b.NombreBurguer.toLowerCase() === nombre.toLowerCase());
+
+            if (index !== -1) {
+                let nueva = {
+                    NombreBurguer: prompt("Nuevo nombre:", burguer[index].NombreBurguer),
+                    CategoriaBurguer: prompt("Nueva categoría:", burguer[index].CategoriaBurguer),
+                    IngredienteBurguer: prompt("Nuevos ingredientes (separados por coma):", burguer[index].IngredienteBurguer.join(",")).split(",").map(i => i.trim()),
+                    PrecioBurguer: parseFloat(prompt("Nuevo precio:", burguer[index].PrecioBurguer)),
+                    ChefBurguer: prompt("Nuevo chef:", burguer[index].ChefBurguer)
+                };
+                burguer.splice(index, 1, nueva);
+                alert("Hamburguesa actualizada.");
+            } else {
+                alert("Hamburguesa no encontrada.");
+            }
+        }
+
+        
+        else if (editar == "4") {
+            let nombre = prompt("Ingrese el nombre del chef a editar:");
+            let index = chef.findIndex(c => c.NombreChef.toLowerCase() === nombre.toLowerCase());
+
+            if (index !== -1) {
+                let nuevo = {
+                    NombreChef: prompt("Nuevo nombre:", chef[index].NombreChef),
+                    Especialidad: prompt("Nueva especialidad:", chef[index].Especialidad)
+                };
+                chef.splice(index, 1, nuevo);
+                alert("Chef actualizado.");
+            } else {
+                alert("Chef no encontrado.");
+            }
+        }
     }
 
-    else if (listita === "3") {
-        let lista = "Lista de todas las hamburguesas:\n\n";
-        burguer.forEach((b, index) => {
-            lista += `${index + 1}. ${b.NombreBurguer} - (${b.CategoriaBurguer}) - precio: $${b.PrecioBurguer} (${b.IngredienteBurguer}) - chef: (${b.ChefBurguer}) \n`;
-        });
-        alert(lista);
-    }
-
-    else if (listita === "4") {
-        let lista = "Lista de todos los chef:\n\n";
-        chef.forEach((che, index) => {
-            lista += `${index + 1}. ${che.NombreChef} - (${che.Especialidad}) \n`;
-        });
-        alert(lista);
-    }
-    }
     else if (opci == 5) {
         alert("ADIOOOOOOOOOOOOOOOOOOOS")
         break
