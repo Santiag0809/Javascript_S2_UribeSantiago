@@ -10,6 +10,7 @@ for (i = 1; i <= 42; i++) {
       rickimartin.push(...datos.results);
       paginasCargadas++;
       if (paginasCargadas === 42) {
+        
         const nombreBuscado = prompt("Escribe el personaje");
         buscarPersonaje(nombreBuscado);
       }
@@ -27,7 +28,7 @@ function buscarPersonaje(nombre) {
   });
 
   if (encontrados.length === 0) {
-    alert(`No se encontró ningún personaje con el nombre "${nombre}".`);
+    alert(`No existen ningun personaje con el nombre : "${nombre}".`);
   } else {
     let mensaje = `Se encontraron ${encontrados.length} personaje(s):\n\n`;
     encontrados.forEach(p => {
@@ -36,5 +37,4 @@ function buscarPersonaje(nombre) {
     alert(mensaje);
   }
 }
-
 
