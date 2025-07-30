@@ -21,3 +21,9 @@ https://santiag0809.github.io/Javascript_S2_UribeSantiago/Dia_1/
 
 ## LINK DEL CUARTRO TRABAJO (FILTRO PYTHON A JAVASCRIPT)
 https://santiag0809.github.io/Javascript_S2_UribeSantiago/Dia_4/
+
+## LINK DEL 7 TRABAJO (API RICK AND MORTY) 
+https://santiag0809.github.io/Javascript_S2_UribeSantiago/Dia_7/
+
+## LINK DEL 8 TRABAJO (SWAPI); 
+https://santiag0809.github.io/Javascript_S2_UribeSantiago/Dia_8/
