@@ -45,3 +45,8 @@ button {
 .tarjeta li {
     margin-bottom: 6px;
 }
+
+.mensaje-error {
+  text-align: center;
+  color: #ff0000;
+}

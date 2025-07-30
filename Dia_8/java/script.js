@@ -44,7 +44,9 @@ document.getElementById("busqueda").addEventListener("click", function () {
         tarjeta.appendChild(lista);
         contenedor.appendChild(tarjeta);
       } else {
-        contenedor.innerHTML = `No se encontró el personaje con ID ${id}</p>`;
+        contenedor.innerHTML = ` <p class="mensaje-error"> No se encontró el personaje con ID ${id} </p>
+`;
+
       }
     }
   };
