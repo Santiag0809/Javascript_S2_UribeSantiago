@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+#contenedor {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+input,
+button {
+    padding: 8px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+#resultadito {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.tarjeta {
+    background-color: white;
+    color: #000;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #000000;
+    max-width: 500px;
+    text-align: left;
+}
+
+.tarjeta h2 {
+    margin-top: 0;
+}
+
+.tarjeta ul {
+    padding-left: 20px;
+}
+
+.tarjeta li {
+    margin-bottom: 6px;
+}
