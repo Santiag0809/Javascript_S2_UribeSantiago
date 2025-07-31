@@ -13,24 +13,25 @@
     <main>
         <img src="img/pokedex.png" alt="pokedex" class="pokedex" />
 
-        <img src="#" alt="pokemon" class="pokemonImage" />
+        <img src="#" alt="pokemon" class="pokemonImage" id="pokemonImage" />
 
         <h1 class="pokemones">
-            <span class="numeroPokemones">1</span> -
-            <span class="nombrePokemon">bulbasaur</span>
+            <span class="numeroPokemones" id="numeroPokemones"></span> -
+            <span class="nombrePokemon" id="nombrePokemon"></span>
         </h1>
 
-        <form class="form">
-            <input type="search" class="inputBuscar" placeholder="Nombre o ID" required />
+        <form class="form" id="form">
+            <input type="search" class="inputBuscar" id="inputBuscar" placeholder="Nombre o ID" required />
         </form>
 
         <div class="siguienteAtras">
-            <button class="button prev">Prev &lt;</button>
-            <button class="button next">Next &gt;</button>
+            <button class="button prev" id="prev">Prev &lt;</button>
+            <button class="button next" id="next">Next &gt;</button>
         </div>
     </main>
 
-    <audio autoplay src="" class="soniditos"></audio>
+    <audio autoplay src="" class="soniditos" id="soniditos"></audio>
+
 
 </body>
 <script src="script/java.js"></script>

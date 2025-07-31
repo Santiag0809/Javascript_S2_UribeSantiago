@@ -49,6 +49,12 @@ h1 {
 }
 
 .nombrePokemon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 100%;
+    overflow-wrap: break-word;
     color: #3a444d;
 }
 
