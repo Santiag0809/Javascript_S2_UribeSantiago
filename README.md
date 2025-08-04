@@ -42,3 +42,6 @@ https://santiag0809.github.io/Javascript_S2_UribeSantiago/Dia_8/
 
 ## LINK DEL 8 TRABAJO (POKE API); 
 https://santiag0809.github.io/Javascript_S2_UribeSantiago/Dia_9/
+
+## LINK DEL 11 TRABAJO (CARD API); 
+https://santiag0809.github.io/Javascript_S2_UribeSantiago/Dia_11/
