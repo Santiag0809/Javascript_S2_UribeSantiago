@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background:
+        url('../details/gif.gif') no-repeat center center fixed,
+        #006400;
+    background-size: cover;
+}
+
+.inicio {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+
+.titu {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.yei {
+    color: gold;
+}
+
+
+.botones {
+    display: flex;
+    gap: 40px;
+}
+
+
+.boton {
+  padding: 15px 30px;
+  font-size: 1em;
+  border: 2px solid gold;
+  background-color: black;
+  color: gold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #222;
+}
