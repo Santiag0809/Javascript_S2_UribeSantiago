@@ -7,6 +7,7 @@ body {
         url('../details/gif.gif') no-repeat center center fixed,
         #006400;
     background-size: cover;
+
 }
 
 .inicio {
@@ -49,5 +50,50 @@ body {
 }
 
 .boton:hover {
+    background-color: #222;
+}
+
+/* INSTRUCCIONES YEIIII*/
+.instru {
+    width: 100vw;
+    height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.instru h2 {
+    font-size: 2.2em;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.instru ol {
+    max-width: 700px;
+    font-size: 1.2em;
+    line-height: 1.6;
+    padding-left: 20px;
+}
+
+.instru li {
+    margin-bottom: 15px;
+}
+
+.linksito {
+    margin-top: 30px;
+    padding: 10px 25px;
+    border: 2px solid gold;
+    background-color: black;
+    color: gold;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.linksito:hover {
     background-color: #222;
 }
