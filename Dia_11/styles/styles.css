@@ -1,42 +1,49 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
-    background:
-        url('../details/gif.gif') no-repeat center center fixed,
-        #006400;
+    background-color: #006400;
+    background-image: url('../details/gif.gif');
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
-
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
 }
 
+
+/*INICIO*/
+
 .inicio {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
 }
-
 
 .titu {
     font-size: 3em;
     font-weight: bold;
     margin-bottom: 40px;
+    margin-top: 20px;
 }
 
 .yei {
     color: gold;
 }
 
-
 .botones {
     display: flex;
     gap: 40px;
 }
-
 
 .boton {
     text-decoration: none;
@@ -53,7 +60,8 @@ body {
     background-color: #222;
 }
 
-/* INSTRUCCIONES YEIIII*/
+/*INSTRUCCIONES*/
+
 .instru {
     width: 100vw;
     height: 100vh;
@@ -96,4 +104,87 @@ body {
 
 .linksito:hover {
     background-color: #222;
+}
+
+/*JUEGO*/
+
+.juegoo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.cartasContenerdor {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px; 
+    flex-wrap: wrap;
+}
+
+.jugador, .computadora {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+.titulo {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: gold;
+}
+
+.resultado {
+    font-size: 20px;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    min-height: 40px;
+    text-align: center;
+}
+
+.botoness {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.jugar {
+    background-color: black;
+    color: gold;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: 2px solid gold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.jugar:hover {
+    background-color: gold;
+    color: black;
+}
+
+.linksito2 {
+    background-color: transparent;
+    color: gold;
+    padding: 8px 16px;
+    border: 1px solid gold;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.linksito2:hover {
+    background-color: gold;
+    color: black;
 }
