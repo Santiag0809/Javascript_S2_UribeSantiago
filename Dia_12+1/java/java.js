@@ -1,19 +1,19 @@
-const token = "9c8ece11ac7213ae313a73d70b8d69c1";
+const token = "21d5a4da61aa90ddf2aa0d12005f9abe";
 
 function buscarPersonaje() {
     document.getElementById("resultados").innerHTML = ``;
-    const nombreUsar = document.getElementById("nombreInput").value.trim();
-    const xhr = new XMLHttpRequest();
-    const url = `https://superheroapi.com/api.php/${token}/search/${nombreUsar}`;
-    xhr.open("GET", url, true);
+    const nombreBuscado = document.getElementById("nombreInput").value.trim();
+    const superHeroe = new XMLHttpRequest();
+    const url = `https://superheroapi.com/api.php/${token}/search/${nombreBuscado}`;
+    superHeroe.open("GET", url, true);
 
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 3) {
+    superHeroe.onreadystatechange = function () {
+        if (superHeroe.readyState === 3) {
             console.log("Cargando...");
         }
-        else if (xhr.readyState === 4 && xhr.status === 200) {
+        else if (superHeroe.readyState === 4 && superHeroe.status === 200) {
             try {
-                const daticos = JSON.parse(xhr.responseText);
+                const daticos = JSON.parse(superHeroe.responseText);
                 if (daticos.results && daticos.results.length > 0) {
                     for (let i = 0; i < daticos.results.length; i++) {
                         let division = document.getElementById("resultados");
@@ -21,9 +21,10 @@ function buscarPersonaje() {
                             <div class="card">
                                 <img src="${daticos.results[i].image.url}" alt="">
                                 <h3>${daticos.results[i].name}</h3>
+                                <h3>${daticos.results[i].biography["full-name"]}</h3>
                             </div>
                         `;
-                        console.log(daticos.results[i].name);
+                        
                     }
                 }
             } catch (err) {
@@ -31,5 +32,5 @@ function buscarPersonaje() {
             }
         }
     };
-    xhr.send();
+    superHeroe.send();
 }
