@@ -1,0 +1,75 @@
+@font-face {
+    font-family: "holiwis" ;
+    src: url(../storage/WorkSans-Regular.ttf);
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: linear-gradient(to right, rgb(79, 85, 93),rgb(39,51,63))
+}
+
+
+.texto {
+    text-align: center;
+}
+
+.hola {
+    color: white;
+    font-family: "holiwis";
+    font-size: 80px;
+}
+
+input {
+    position: relative;
+    background-color: rgb(27, 27, 27);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border: black;
+    color: white;
+    padding-top: 10px ;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 350px;
+
+}
+
+.busquedita:hover {
+    transform: scale(1.2);
+}
+
+.boton {
+    position: absolute;
+    padding: 7.8px 7.5px 8px 9px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    font-family: "holiwis";
+}
+
+
+@media (max-width: 730px) {
+    .boton {
+        position: relative;
+        padding: 10px;
+        border-radius: 0;
+        border: white;
+        
+    }
+
+    .input {
+        position: relative;
+        border-radius: 0;
+    }
+
+    .busquedita button{
+        position: relative;
+        margin: 20px;
+    }
+
+    .busquedita:hover {
+        transform: scale(1);
+    }
+}
