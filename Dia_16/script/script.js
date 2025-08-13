@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const datotes = document.querySelector('.opciones');
-    const inputYei = document.getElementById('inputisito');
+    const inputYei = document.getElementById('inputsito');
     const botonEnvio = document.getElementById('botoncete');
 
     async function fetchData() {
